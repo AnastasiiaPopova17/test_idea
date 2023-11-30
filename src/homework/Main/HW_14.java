@@ -31,15 +31,13 @@ public class HW_14 {
  Пример: {1, 2, 8, 7} -> количество четных чисел = 2.
      */
     public static int calculateEven(int[] num) {
-        int sum = 0;
-        int j = 0;
+        int counter = 0;
         for (int i = 0; i < num.length; i++) {
           if (num[i] % 2 == 0) {
-              j= 1;
-              sum = sum + j;
-            }
+              counter++;
+              }
         }
-        return sum;
+        return counter;
 
     }
 }
