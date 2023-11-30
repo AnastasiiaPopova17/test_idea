@@ -40,9 +40,8 @@ public class HW_16 {
 Примет: abcd -> bcda
      */
     public static String changeLetter(String name){
-        String part1 = name.substring(1);
-        String part2 = name.substring(0,1);
-        String newName = (part1.concat(part2));
+        String newName = name.substring(1)+name.substring(0,1);
+
         return newName;
 
 }
