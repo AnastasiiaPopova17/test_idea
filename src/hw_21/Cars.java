@@ -26,7 +26,7 @@ public void findCar(String carToFind)
             }
 
     public void findCar(String carToFind) {
-        String[] getSalon = {"Audi", "BMW", "Ford", "Honda", "Hyundai", "Kia", "Mazda"};
+
         for (int i = 0; i < salon.length; i++) {
                 if (carToFind != salon[i]) {
                     System.out.println("Такой машины нет , возьмите " + Arrays.toString(salon));
