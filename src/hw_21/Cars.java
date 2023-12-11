@@ -21,7 +21,7 @@ public void findCar(String carToFind)
 
     }
     public static void main(String[] args) {
-        Cars cars = new Cars(new String[]{"Mercedes"});
+        Cars cars = new Cars(new String[]{"Audi", "BMW", "Ford", "Honda", "Hyundai", "Kia", "Mazda"});
         cars.findCar("Mercedes");
             }
 
