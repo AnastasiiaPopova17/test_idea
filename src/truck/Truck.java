@@ -1,87 +1,117 @@
 package truck;
 
-public class Truck {
-   // int i;
-    //boolean b;
-    //String s;
+public class Truck extends Car{
 
-    private String model;
 
-    private String manufacturer;
 
-    private int year;
+     int maxWeight;
+     int weight;
+     int unloadingWeight;
 
-    private String color;
+     int currentWeight = 0;
 
-    private int maxWeight;
+     int currentFuel = 0;
 
-    private int currentWeight = 0;
+     int maxFuel;
 
-    private int currentFuel = 0;
+     private String owner;
 
-    private int maxFuel;
-
-    private String owner;
-
-    public Truck(String model, String manufacturer, int year, String color, int maxWeight, int maxFuel, String owner) {
-        this.model = model;
-        this.manufacturer = manufacturer;
-        this.year = year;
-        this.color = color;
+    public Truck(String model, String manufacturer, int year, String color, int maxWeight, int weight, int unloadingWeight, int maxFuel, String owner) {
+        super(model, manufacturer, year, color );
         this.maxWeight = maxWeight;
+        this.weight = weight;
+        this.unloadingWeight = unloadingWeight;
         this.maxFuel = maxFuel;
         this.owner = owner;
     }
 
-    public void load(int weight){
-        currentWeight = currentWeight + weight;
-        if (currentWeight > maxWeight){
-            System.out.println("The weight is more, than " + maxWeight);
-        } else if (currentWeight < maxWeight) {
-            System.out.println("The weight is less, than " + maxWeight + ". You can load " + (maxWeight-currentWeight));
-          }
-        System.out.println("Loading " + currentWeight + " tons");
-    }
-    public void unload(int unloadingWeight){
-        if (unloadingWeight > currentWeight){
-            System.out.println("The current weight is less, than the weight you try to unload!");
-        } else if (unloadingWeight < 0) {
-            System.out.println("You try to unload the weight less 0");
-        } else if (unloadingWeight < currentWeight) {
-            System.out.println("You can unload else " + (unloadingWeight - currentWeight));
+       public void load(){
+        if (weight > getRemainingCapacity()){
+            System.out.println("This is too heavy for me! Can't continue!");
+            printRemainingCapacity();
+            return;
         }
-        System.out.println("Unloading" + unloadingWeight + " tons");
+        currentWeight += weight;
+        System.out.println("Loading " + weight + " kg.....");
+        System.out.println("Loaded" + weight + " kg.");
+        return;
+    }
+    public void unload(){
+        if (unloadingWeight > currentWeight){
+            System.out.println("Not enough cargo!");
+            printRemainingCargo();
+            return;
+        }
+        if (unloadingWeight < 0){
+            System.out.println("Can't unload negative weight");
+            return;
+        }
+        currentWeight -= unloadingWeight;
+        System.out.println("Unloading" + unloadingWeight + " kg.....");
+        System.out.println("Unloaded" + unloadingWeight + " kg.");
+        printRemainingCargo();
 
     }
+    private void printRemainingCargo(){
+        System.out.println("Remaining cargo weight is " + currentWeight + " kg");
+    }
+
     public void move(){
         if (currentFuel == 0){
-            System.out.println("You need to fill the Fuel");
-        } else if (currentWeight == 0) {
-            System.out.println("You need loading");
-        } else if (currentWeight > 0 && currentFuel > 0) {
-            System.out.println("The truck can move");
+            System.out.println("Not enough fuel, can't drive");
+            return;
+        }
+        if (currentWeight == 0) {
+            System.out.println("Please load the truck before driving");
+            return;
+        }
+        System.out.println("Trying...");
+        System.out.println("Trying...");
+        System.out.println("Yeah, driving");
 
         }
 
-    }
+
     public void stop(){
-        if (currentFuel == 0){
-            System.out.println("You need to stop and refuel");
+        System.out.println("Stopping...");
+        System.out.println("Stopping...");
+        System.out.println("Yeah!");
         }
 
-    }
-    public String fillFuel(int currentFuel) {
-        if (maxFuel == currentFuel) {
-            System.out.println("You have refueled");
+    public  void setCurrentFuel(int currentFuel) {
+        this.currentFuel = maxFuel;
+        if (maxFuel < currentFuel) {
+            this.currentFuel = maxFuel;
+            return;
         }
+        this.currentFuel = currentFuel;
     }
     public String getOwner(){
         return "The owner is" + owner;
+
     }
+
     private void printRemainingCapacity(){
+        System.out.println("Remaing capacity " + getRemainingCapacity() + " tons");
         //pechataet, skol'ko ostaetsya eshe gruza na bortu
     }
-    public String toString(){
-        return "";
+    private int getRemainingCapacity(){
+
+        return maxWeight - currentWeight;
+    }
+
+    @Override
+    public String toString() {
+        return "Truck{" +
+                "model='" + model +
+                ", manufacturer='" + manufacturer +
+                ", year=" + year +
+                ", color='" + color +
+                ", maxWeight=" + maxWeight +
+                ", currentWeight=" + currentWeight +
+                ", currentFuel=" + currentFuel +
+                ", maxFuel=" + maxFuel +
+                ", owner='" + owner +
+                '}';
     }
 }
