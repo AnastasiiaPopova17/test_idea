@@ -50,6 +50,11 @@ public class Garden {
         tree.doAutumn();
         tree.doWinter();
 
+        Plant[] plants = {flower, tree};
+        for (Plant plant : plants){
+            System.out.println(plant);
+        }
+
         }
 
 
