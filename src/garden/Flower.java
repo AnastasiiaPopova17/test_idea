@@ -10,7 +10,7 @@ public class Flower extends Plant {
     }
 
     public void doAutumn(){
-        height = height-10;
+        height = height-height;
         System.out.println("In Autumn " + name + " is being cut, " + height );
 
     }
