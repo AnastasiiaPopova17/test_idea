@@ -1,22 +1,22 @@
 package hw_28;
 
 public class Wallet {
-    String creditcard;
-    int euro;
-    int cent;
-    public Wallet(String creditcard, int euro, int cent){
-        this.creditcard = creditcard;
-        this.euro = euro;
-        this.cent = cent;
+    String type;
+    String size;
+    Money money;
+    public Wallet(String type, String size, Money money){
+        this.type = type;
+        this.size = size;
+        this.money = money;
 
     }
 
     @Override
     public String toString() {
         return "Wallet{" +
-                "creditcard='" + creditcard + '\'' +
-                ", euro=" + euro +
-                ", cent=" + cent +
+                "type='" + type + '\'' +
+                ", size='" + size + '\'' +
+                ", money=" + money +
                 '}';
     }
 }

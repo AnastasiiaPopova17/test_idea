@@ -1,18 +1,18 @@
 package hw_28;
 
 public class Money {
-    int euro;
-    int cent;
-    public Money(int euro, int cent){
-        this.euro = euro;
-        this.cent = cent;
+    String currency;
+    int denomination;
+    public Money(String currency, int denomination){
+        this.currency = currency;
+        this.denomination = denomination;
     }
 
     @Override
     public String toString() {
         return "Money{" +
-                "euro='" + euro + '\'' +
-                ", cent='" + cent + '\'' +
+                "currency='" + currency + '\'' +
+                ", denomination=" + denomination +
                 '}';
     }
 }

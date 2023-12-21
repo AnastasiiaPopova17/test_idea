@@ -15,15 +15,15 @@ public class Main {
 
      */
     public static void main(String[] args) {
-        Figure circle1 = new Circle(8);
-        Figure rectangle1 = new Rectangle(4, 7.89);
-        Figure square1 = new Square(5, 5);
+        Figure circle = new Circle("Circle", 10.0);
+        Figure rectangle = new Rectangle("Rectangle", 5,10);
+        Figure square = new Square("Square", 5);
+        Figure figure = new Figure("Figure");
 
-        Figure[] figures = {circle1,rectangle1,square1};
-        for (Figure figure : figures ){
-        System.out.println(figure);
-        figure.area();
-
+        Figure[] figures = {circle,rectangle,square,figure};
+        for (Figure f : figures ){
+        System.out.println(f.getName() + " has area of " + f.findArea());
+            System.out.println();
        }
     }
 }

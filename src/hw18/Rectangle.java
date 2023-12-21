@@ -14,12 +14,11 @@ public class Rectangle {
         this.width = width;
 
     }
-    public static void calculatePerimetr(){
-        //int perimetr = 2*(width+width)
-        System.out.println("Perimetr is " + 2*(width+width) + " cm");
+    int calculatePerimetr(){
+        return  2*(width+width);
     }
-    public static void calculateSquare(){
-        System.out.println("Square is " + (width*length) + " sq cm");
+    int calculateSquare(){
+        return (width*length);
     }
 
 

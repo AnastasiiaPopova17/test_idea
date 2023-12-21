@@ -1,42 +1,55 @@
 package truck;
 
 public class Car {
-     String model;
+     private String model;
 
-     String manufacturer;
+     private String manufacturer;
 
-     int year;
+     private int year;
 
-     String color;
+     private String color;
+    private String owner;
 
-     public Car(String model, String manufacturer, int year, String color){
+     public Car(String model, String manufacturer, int year, String color, String owner){
          this.model = model;
          this.manufacturer = manufacturer;
          this.color = color;
          this.year = year;
+         this.owner = owner;
      }
-     public void load(){
-         System.out.println("Any car can be loaded. The question of volume ");
-     }
-     public void unload(){
-         System.out.println("Any car can be unload. The question is by whom");
-     }
-     public void move(){
-         System.out.println("Every car can move");
-     }
-     public void stop(){
-         System.out.println("Stopping...");
-     }
+
+    public String getModel() {
+        return model;
+    }
+
+    public int getYear() {
+        return year;
+    }
+
+    public String getColor() {
+        return color;
+    }
 
     public String getManufacturer() {
         return manufacturer;
     }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
+    public String getOwner(){
+         return owner;
+    }
+    public void move(){
+        System.out.println("A car moves");
+    }
+    public void stop(){
+        System.out.println("A car stops");
     }
 
-    public String getOwner() {
-         return getOwner();
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                ", manufacturer='" + manufacturer + '\'' +
+                ", year=" + year +
+                ", color='" + color + '\'' +
+                '}';
     }
 }

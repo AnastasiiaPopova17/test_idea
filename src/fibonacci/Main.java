@@ -12,6 +12,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println(fibViaArray(3));
         System.out.println(fibViaArray(5));
+        System.out.println(fibViaArray(0));
+       // System.out.println(fibViaArray(1));
     }
     public static long fibViaArray(int n) {
         long[] fib = {0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55};

@@ -1,25 +1,23 @@
 package practice_14_12;
 
 public class Figure {
-    double length;
-    double width;
+    private String name;
 
-    public Figure(double length, double width){
-        this.length = length;
-        this.width = width;
-    }
-    public Figure(){
+
+    public Figure(String name){
+        this.name = name;
 
     }
-    public void area(){
-        System.out.println(length*width);
+    public double findArea(){
+        return 0.0;
+    }
 
+    public String getName(){
+        return name;
     }
 
     @Override
     public String toString() {
-        return "Figure " + "with " +
-                "length=" + length +
-                ", width=" + width;
+        return "name='" + name + '\'';
     }
 }

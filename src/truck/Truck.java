@@ -2,41 +2,35 @@ package truck;
 
 public class Truck extends Car{
 
+     private int maxWeight;
+
+     private int currentWeight = 0;
+
+     private int currentFuel = 0;
+
+     private int maxFuel;
 
 
-     int maxWeight;
-     int weight;
-     int unloadingWeight;
 
-     int currentWeight = 0;
-
-     int currentFuel = 0;
-
-     int maxFuel;
-
-     private String owner;
-
-    public Truck(String model, String manufacturer, int year, String color, int maxWeight, int weight, int unloadingWeight, int maxFuel, String owner) {
-        super(model, manufacturer, year, color );
+    public Truck(String model, String manufacturer, int year, String color, int maxWeight, int maxFuel, String owner) {
+        super(model, manufacturer, year, color, owner );
         this.maxWeight = maxWeight;
-        this.weight = weight;
-        this.unloadingWeight = unloadingWeight;
         this.maxFuel = maxFuel;
-        this.owner = owner;
-    }
-
-       public void load(){
-        if (weight > getRemainingCapacity()){
-            System.out.println("This is too heavy for me! Can't continue!");
-            printRemainingCapacity();
-            return;
         }
-        currentWeight += weight;
-        System.out.println("Loading " + weight + " kg.....");
-        System.out.println("Loaded" + weight + " kg.");
-        return;
-    }
-    public void unload(){
+
+
+    public void load (int weight) {
+           if (weight > getRemainingCapacity()) {
+               System.out.println("This is too heavy for me! Can't continue!");
+               printRemainingCapacity();
+               return;
+           } else {
+               currentWeight += weight;
+               System.out.println("Loading " + weight + " kg.....");
+               System.out.println("Loaded" + weight + " kg.");
+           }
+       }
+    public void unload(int unloadingWeight){
         if (unloadingWeight > currentWeight){
             System.out.println("Not enough cargo!");
             printRemainingCargo();
@@ -86,10 +80,6 @@ public class Truck extends Car{
         }
         this.currentFuel = currentFuel;
     }
-    public String getOwner(){
-        return "The owner is" + owner;
-
-    }
 
     private void printRemainingCapacity(){
         System.out.println("Remaing capacity " + getRemainingCapacity() + " tons");
@@ -102,16 +92,12 @@ public class Truck extends Car{
 
     @Override
     public String toString() {
-        return "Truck{" +
-                "model='" + model +
-                ", manufacturer='" + manufacturer +
-                ", year=" + year +
-                ", color='" + color +
+        return super.toString() + "\n" +"Truck{" +
                 ", maxWeight=" + maxWeight +
                 ", currentWeight=" + currentWeight +
                 ", currentFuel=" + currentFuel +
                 ", maxFuel=" + maxFuel +
-                ", owner='" + owner +
+                ", owner='" + getOwner() +
                 '}';
     }
 }

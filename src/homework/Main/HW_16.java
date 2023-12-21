@@ -11,10 +11,8 @@ public class HW_16 {
 Пример: Hello -> 10
          */
         System.out.println(doubleString("Hello world!"));
-        String str1 = "New".substring(1);
-        String str2 = "Year".substring(1);
 
-        System.out.println(concatStr(str1,str2));
+        System.out.println(concatStr("Hello", "There"));
 
         System.out.println(changeLetter("abcd"));
 
@@ -29,9 +27,10 @@ public class HW_16 {
 Пример: "Hello", "There" -> ELLOHERE
      */
     public static String concatStr(String str1, String str2){
-       String concatString = str1.concat(str2).toUpperCase();
+       String concatString = str1.substring(1) + str2.substring(1);
 
-        return concatString;
+
+        return concatString.toUpperCase();
     }
 
     /*
@@ -41,6 +40,8 @@ public class HW_16 {
      */
     public static String changeLetter(String name){
         String newName = name.substring(1)+name.substring(0,1);
+        //char str2 = str.charAt(0);
+        //return = str + str2;
 
         return newName;
 

@@ -9,12 +9,12 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("There are 1 billion and 338 millions cubic km water in world ocean");
         WorldOcean worldOcean = new WorldOcean();
-        Oceans oceans = new Oceans();
-        Seas seas = new Seas();
+        Ocean ocean = new Ocean();
+        Sea sea = new Sea();
 
         worldOcean.structure();
-        oceans.structure();
-        seas.structure();
+        ocean.structure();
+        sea.structure();
 
     }
 }

@@ -22,20 +22,16 @@ public class Main {
 
     */
     public static void main(String[] args) {
-        Car car = new Car("Car", "No name", 0, "white");
-        Car truck = new Truck("SuperTruck",
+       Car truck = new Truck("SuperTruck",
                             "Volvo",
                                  2020,
                                  "red",
                              5000,
                                 500,
-                                200, 500, "John Black");
+                                 "John Black");
 
         System.out.println(truck);
 
-        truck.load();
-        truck.load();
-        truck.load();
 
         truck.move();
         ((Truck) truck).setCurrentFuel(600);
@@ -43,10 +39,6 @@ public class Main {
 
         truck.stop();
 
-        truck.unload();
-        truck.unload();
-        truck.unload();
-        truck.unload();
 
         Car truck1 = new Truck("SuperTruck1",
                 "MAN",
@@ -54,11 +46,11 @@ public class Main {
                 "black-yellow",
                 10000,
                 400,
-                400, 500, "Jack White" );
-        Car[] trucks = {(Car) truck,truck1,};
-        System.out.println(Arrays.toString(trucks));
+                 "Jack White" );
+        Car[] autos = {(Car) truck,truck1,};
+        //System.out.println(Arrays.toString(autos));
 
-        for (Car tr : trucks){
+        for (Car tr : autos){
             System.out.println("truck " + tr.getManufacturer() + " :  " + tr.getOwner());
         }
 
@@ -66,8 +58,8 @@ public class Main {
                 "VW",
                 2021,
                 "red",
-                4,
-                "diesel" );
+                "Bill",
+                 5);
 
         System.out.println(passengerCar);
         passengerCar.move();

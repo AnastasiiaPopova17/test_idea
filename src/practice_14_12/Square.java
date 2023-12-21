@@ -1,16 +1,15 @@
 package practice_14_12;
 
 public class Square extends Figure{
-    public Square(double length, double width){
-        super(length,width);
+    private double a;
+
+    public Square(String name, double a){
+        super(name);
+        this.a = a;
     }
-    public void area(){
-        System.out.println("Square has area of " + width*length);
+    public double findArea(){
+        return a*a;
     }
 
-    @Override
-    public String toString() {
-        return  super.toString() + " :" +
-                " Square";
-    }
+
 }
