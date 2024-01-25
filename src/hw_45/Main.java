@@ -30,7 +30,7 @@ public class Main {
          System.out.println(checkable.test("abcd"));
 
          //Transformable transformable = s -> s.toUpperCase();
-         UnaryOperator<String> transformable = s -> s.toUpperCase();
+         UnaryOperator<String> transformable = String :: toUpperCase;
          System.out.println(transformable.apply("abcDe"));
 
          //Transformable transformable1 = s -> s.length() == 4? "****" : s;
